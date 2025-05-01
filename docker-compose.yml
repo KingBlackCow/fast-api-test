@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0.32
+    container_name: FastAPI_mysql
+    volumes:
+      - ./db/conf.d:/etc/mysql/conf.d
+      - ./db/initdb.d:/docker-entrypoint-initdb.d
+    # volumes:
+    #   - /Users/admin/datadir:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=fastapi
+      - MYSQL_USER=sgs1159
+      - MYSQL_PASSWORD=vace1159
+      - MYSQL_ROOT_PASSWORD=root
+      - TZ=Asia/Seoul
+    ports:
+      - "3306:3306"
+    platform: linux/arm64/v8
