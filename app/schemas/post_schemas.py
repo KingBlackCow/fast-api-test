@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import List
-from app.dtos.comment_dtos import CommentResponse
+from app.schemas.comment_schemas import CommentResponse
 
 class PostResponse(BaseModel):
     id: int

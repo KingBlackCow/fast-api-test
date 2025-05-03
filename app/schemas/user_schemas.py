@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr, ConfigDict
 from typing import List
-from app.dtos.post_dtos import PostResponse
+from app.schemas.post_schemas import PostResponse
 
 class UserCreate(BaseModel):
     name: str
