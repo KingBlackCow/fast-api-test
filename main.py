@@ -1,8 +1,10 @@
 from fastapi import FastAPI
+from app.exceptions.exception_handler import register_exception_handlers
 from app.routes import user_controller
-from app import models
+
 app = FastAPI()
 app.include_router(user_controller.router)
+register_exception_handlers(app)
 
 @app.get("/")
 async def root():

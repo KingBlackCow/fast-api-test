@@ -19,7 +19,7 @@ async def create_user(db: AsyncSession, user_data: UserCreate) -> User:
     await db.refresh(user, ["posts"])
     return user
 
-async def get_user_with_posts(db: AsyncSession, user_id: str) -> UserResponse | None:
+async def get_user_with_posts(db: AsyncSession, user_id: int) -> UserResponse | None:
     result = await db.execute(
         select(User)
         .options(
